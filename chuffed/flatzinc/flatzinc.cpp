@@ -65,8 +65,8 @@ namespace FlatZinc {
             if (s->id == "indomain_median") return VAL_MEDIAN;
             if (s->id == "indomain_split") return VAL_SPLIT_MIN;
             if (s->id == "indomain_reverse_split") return VAL_SPLIT_MAX;
-            //if (s->id == "indomain_random") return VAL_RANDOM;
-            if (s->id == "indomain_random") CHUFFED_ERROR("The value choice annotation 'indomain_random' is not supported yet!\n");
+            if (s->id == "indomain_random") return VAL_RANDOM;
+            //if (s->id == "indomain_random") CHUFFED_ERROR("The value choice annotation 'indomain_random' is not supported yet!\n");
         }
         std::cerr << "% Warning, ignored search annotation: ";
         ann->print(std::cerr);

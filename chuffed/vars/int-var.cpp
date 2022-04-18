@@ -192,6 +192,11 @@ DecInfo* IntVar::branch() {
 	switch (preferred_val) {
 		case PV_MIN       : return new DecInfo(this, min, 1);
 		case PV_MAX       : return new DecInfo(this, max, 1);
+		case PV_RANDOM: {
+				vec<int> possible;
+				for (int i = min; i <= max; i++) if (indomain(i)) possible.push(i);
+				return new DecInfo(this, possible[rand()%possible.size()], 1);
+			}
 #if INT_BRANCH_HOLES
 		// note slight inconsistency, if INT_BRANCH_HOLES=0 then we
 		// round down rather than up (vice versa for PV_SPLIT_MAX),

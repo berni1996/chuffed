@@ -98,6 +98,7 @@ BranchGroup* createBranch(vec<Branching*> x, VarBranch var_branch, ValBranch val
             case VAL_MEDIAN: p = PV_MEDIAN; break;
             case VAL_SPLIT_MIN: p = PV_SPLIT_MIN; break;
             case VAL_SPLIT_MAX: p = PV_SPLIT_MAX; break;
+			case VAL_RANDOM: p = PV_RANDOM; break;
             default: CHUFFED_ERROR("The value selection branching is not yet supported\n");
         }
         for (int i = 0; i < x.size(); i++) ((Var*) x[i])->setPreferredVal(p);

@@ -26,7 +26,8 @@ enum PreferredVal {
 	PV_MAX,
 	PV_SPLIT_MIN,
 	PV_SPLIT_MAX,
-	PV_MEDIAN
+	PV_MEDIAN,
+	PV_RANDOM
 };
 
 class Var : public Branching {
